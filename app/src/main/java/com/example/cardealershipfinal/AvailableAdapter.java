@@ -1,5 +1,6 @@
 package com.example.cardealershipfinal;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,13 +29,24 @@ public class AvailableAdapter extends RecyclerView.Adapter<AvailableAdapter.Avai
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AvailableViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AvailableViewHolder holder, final int position) {
         AvailableModel currentModel = mModels.get(position);
 
         holder.mCarImage.setImageResource(currentModel.getCarImage());
         holder.mCarName.setText(currentModel.getCarName());
         holder.mCarEngine.setText(currentModel.getCarEngine());
         holder.mCarOptions.setText(currentModel.getCarOptions());
+
+        holder.mCarImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),Zoomed.class);
+                intent.putExtra("image_url",mModels.get(position).getCarImage());
+                //intent.putExtra("text",mModels.get(position).getCarName());
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override

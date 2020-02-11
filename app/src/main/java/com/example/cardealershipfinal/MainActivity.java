@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     CompanyAdapter adapter;
     ArrayList<CompanyModel> posts;
+    String send = "send ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
         CompanyModel post1 = new CompanyModel(R.drawable.mercedes, "Mercedes Benz");
         CompanyModel post2 = new CompanyModel(R.drawable.bmw, "BMW");
+        CompanyModel post3= new CompanyModel(R.drawable.audi,"Audi");
+
 
         posts.add(post1);
         posts.add(post2);
+        posts.add(post3);
 
 
         adapter.notifyDataSetChanged();
@@ -67,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this,"Item 1 selected",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.item2:
-                Toast.makeText(this,"Item 2 selected",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"You are on the home page",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.item3:
-                Toast.makeText(this,"Item 3 selected",Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item4:
-                Toast.makeText(this,"Item 4 selected",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Models selected",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this,DetailsActivity.class);
+                //intent.putExtra("send",send);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

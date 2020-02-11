@@ -57,6 +57,19 @@ public class AvailableActivity extends AppCompatActivity {
             modeli.add(new AvailableModel(R.drawable.sedumprva, "BMW 7-Series 2016", "4.2-litre V8 petrol 230 Horsepower", "Comfort package"));
             modeli.add(new AvailableModel(R.drawable.sedumprva, "BMW 7-Series 2019", "6.1-litre V6 Eco hybrid 450 Horsepower", "Ellegance package"));
         }
+        else if(imgSent==R.drawable.achetiri) {
+            modeli.add(new AvailableModel(R.drawable.achetprva, "Audi A4 2008", "3.6-litre 4.0 petrol 180 Horsepower", "Comfort package"));
+            modeli.add(new AvailableModel(R.drawable.achettreta, "Audi A4 2019", "6.1-litre V8 Eco hybrid 450 Horsepower", "Ellegance package"));
+            modeli.add(new AvailableModel(R.drawable.achetvtora, "Audi A4 2012", "6.1-litre V6 Petrol 320 Horsepower", "Ellegance Quattro package"));
+        }
+        else if(imgSent==R.drawable.ashesh) {
+            modeli.add(new AvailableModel(R.drawable.asesprva, "Audi A6 2016", "5.2-litre V10 petrol 340 Horsepower", "Sport Quattro package"));
+
+        }
+        else if(imgSent==R.drawable.qsedum) {
+            modeli.add(new AvailableModel(R.drawable.qsedprva, "Audi Q7 2012", "4.2-litre 6.0 Diesel 280 Horsepower", "Luxury Quattro package"));
+
+        }
 
 
 

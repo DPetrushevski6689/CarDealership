@@ -38,7 +38,24 @@ public class DetailsActivity extends AppCompatActivity {
             modeli.add(new Model(R.drawable.five,"5-Series"));
             modeli.add(new Model(R.drawable.seven,"7-Series"));
         }
+        else if(id==R.drawable.audi){
+            modeli.add(new Model(R.drawable.achetiri,"A4"));
+            modeli.add(new Model(R.drawable.ashesh,"A6"));
+            modeli.add(new Model(R.drawable.qsedum,"Q7"));
+        }
 
+        /**String send = intent.getStringExtra("send");
+        if(send.equals("send")){
+            modeli.add(new Model(R.drawable.cclass,"C-Class"));
+            modeli.add(new Model(R.drawable.eclass,"E-Class"));
+            modeli.add(new Model(R.drawable.sclass,"S-Class"));
+            modeli.add(new Model(R.drawable.three,"C-Class"));
+            modeli.add(new Model(R.drawable.five,"E-Class"));
+            modeli.add(new Model(R.drawable.seven,"S-Class"));
+            modeli.add(new Model(R.drawable.achetiri,"C-Class"));
+            modeli.add(new Model(R.drawable.ashesh,"E-Class"));
+            modeli.add(new Model(R.drawable.qsedum,"S-Class"));
+        }**/
 
 
 
