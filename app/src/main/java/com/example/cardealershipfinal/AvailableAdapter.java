@@ -36,13 +36,11 @@ public class AvailableAdapter extends RecyclerView.Adapter<AvailableAdapter.Avai
         holder.mCarName.setText(currentModel.getCarName());
         holder.mCarEngine.setText(currentModel.getCarEngine());
         holder.mCarOptions.setText(currentModel.getCarOptions());
-
         holder.mCarImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),Zoomed.class);
                 intent.putExtra("image_url",mModels.get(position).getCarImage());
-                //intent.putExtra("text",mModels.get(position).getCarName());
                 v.getContext().startActivity(intent);
             }
         });
@@ -58,12 +56,20 @@ public class AvailableAdapter extends RecyclerView.Adapter<AvailableAdapter.Avai
         public ImageView mCarImage;
         public TextView mCarName,mCarEngine,mCarOptions;
 
-        public AvailableViewHolder(@NonNull View itemView) {
+        public AvailableViewHolder(@NonNull final View itemView) {
             super(itemView);
             mCarImage=itemView.findViewById(R.id.availableModelImage);
             mCarName=itemView.findViewById(R.id.carName);
             mCarEngine=itemView.findViewById(R.id.carEngine);
             mCarOptions=itemView.findViewById(R.id.carOptions);
+            /*********itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(),Zoomed.class);
+                    intent.putExtra("image_url",);
+                    v.getContext().startActivity(intent);
+                }
+            });***************/
         }
     }
 }
